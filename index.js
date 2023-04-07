@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose')
 const mainRouter = require('./routes/main.js')
-//const profsRouter = require("./routes/profs");
+const profsRouter = require("./routes/profs.js");
 //const etudiantsRouter = require("./routes/etudiants");
 //const coursRouter = require("./routes/cours");
 
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/", mainRouter);
-//app.use("/profs", profsRouter);
+app.use("/profs", profsRouter);
 //app.use("/cours", coursRouter);
 //app.use("/etudiants", etudiantsRouter);
 

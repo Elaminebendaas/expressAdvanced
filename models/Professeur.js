@@ -1,4 +1,4 @@
-import {mongoose} from "../index.js"
+const mongoose = require('mongoose')
 
 const professeurSchema = new mongoose.Schema({
         prenom: String,
@@ -8,4 +8,4 @@ const professeurSchema = new mongoose.Schema({
 )
 const Professeur = mongoose.model("Professeur", professeurSchema);
 
-export default Professeur;
+module.exports = Professeur;
