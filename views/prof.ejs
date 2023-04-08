@@ -7,6 +7,15 @@
     <title><%= data[0].nom %>, <%= data[0].prenom %></title>
 </head>
 <body>
+    <form action="/profs/<%=data[0]._id%>" method="post">
+        <label for="prenom">Prenom:</label>
+        <input type="text" name="prenom" value="<%= data[0].prenom %>">
+        <br>
+        <label for="nom">Nom:</label>
+        <input type="text" name="nom" value="<%= data[0].nom %>">
+
+    
+    </form>
     
 </body>
 </html>
