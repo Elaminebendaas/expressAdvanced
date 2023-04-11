@@ -13,10 +13,20 @@
         <br>
         <label for="profs">Choisi le prof du cours:</label>
         <select name="profs" id=""><% data.forEach(prof => { %>
-         <option><%= prof.nom %>, <%= prof.prenom %></option>
+         <option value="<%= prof._id %>"><%= prof.nom %>, <%= prof.prenom %></option>
         <% }) %></select>
         <br>
         <button>Submit</button>
     </form>
+
+
+
+    <ul>
+        <% coursData.forEach(cours => { %>
+            <a href="/cours/<%= cours._id %>"><%= cours.nomDuCours %>: <%= cours.nomDuProf %></a> <br>
+        <% }) %>
+    </ul>
+    <a href="/">Retourner au menu</a>
+
 </body>
 </html>
