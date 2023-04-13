@@ -32,6 +32,19 @@ async function getCours(req, res){
     res.render("cour", {data: listOfProfs, cours: leCours})
 }
 
+async function changerCours(req, res){
+    const {nomDuCours, profs} = req.body;
+    const tempProf = await Professeur.findById(profs)
+    await Cours.updateOne({_id: req.params.id},{
+        $set:{
+            nomDuCours: nomDuCours,
+            idDuProf: tempProf._id,
+            nomDuProf: `${tempProf.nom}, ${tempProf.prenom}`
+        }
+    })
+    res.redirect('/cours')
+}
 
 
-module.exports = {getProfs, postCours, getCours};
+
+module.exports = {getProfs, postCours, getCours, changerCours};
